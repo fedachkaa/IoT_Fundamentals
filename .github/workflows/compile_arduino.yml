@@ -22,4 +22,4 @@ jobs:
         with:
           fqbn: arduino:avr:uno
           sketch-paths: |
-            ./src
+            ./src/hw_2_conditional_control_of_three_leds_with_a_button1
