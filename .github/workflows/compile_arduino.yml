@@ -26,7 +26,7 @@ jobs:
 
       - name: Compile firmware
         run: |
-          ./bin/arduino-cli compile \
+          arduino-cli compile \
             --fqbn arduino:avr:uno \
             --output-dir build \
              ./src/hw_2_conditional_control_of_three_leds_with_a_button1
