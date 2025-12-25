@@ -23,13 +23,21 @@ jobs:
           fqbn: arduino:avr:uno
           sketch-paths: |
             ./src/hw_2_conditional_control_of_three_leds_with_a_button1
+            ./src/hw_2_while_loop_to_control_leds_with_a_button1
 
-      - name: Compile firmware
+      - name: Compile hw_2_conditional_control_of_three_leds_with_a_button1
         run: |
           arduino-cli compile \
             --fqbn arduino:avr:uno \
-            --output-dir build \
-             ./src/hw_2_conditional_control_of_three_leds_with_a_button1
+            --output-dir build/hw2_leds \
+            ./src/hw_2_conditional_control_of_three_leds_with_a_button1
+
+      - name: Compile hw_2_while_loop_to_control_leds_with_a_button1
+        run: |
+          arduino-cli compile \
+            --fqbn arduino:avr:uno \
+            --output-dir build/hw2_while_loop \
+            ./src/hw_2_while_loop_to_control_leds_with_a_button1
 
       - name: Upload compiled firmware
         uses: actions/upload-artifact@v4
