@@ -23,3 +23,16 @@ jobs:
           fqbn: arduino:avr:uno
           sketch-paths: |
             ./src/hw_2_conditional_control_of_three_leds_with_a_button1
+
+      - name: Compile firmware
+        run: |
+          arduino-cli compile \
+            --fqbn arduino:avr:uno \
+            --output-dir build \
+             ./src/hw_2_conditional_control_of_three_leds_with_a_button1
+
+      - name: Upload compiled firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: arduino-uno-firmware-bin
+          path: build/**/*.hex
