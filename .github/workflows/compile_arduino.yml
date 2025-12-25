@@ -2,8 +2,9 @@ name: Compile Arduino Sketch
 
 on:
   push:
-    branches: [ "develop" ]
-
+    branches: ["develop"]
+  pull_request:
+    branches: ["develop"]
   workflow_dispatch:
 
 jobs:
@@ -21,4 +22,4 @@ jobs:
         with:
           fqbn: arduino:avr:uno
           sketch-paths: |
-            ./
+            ./src
